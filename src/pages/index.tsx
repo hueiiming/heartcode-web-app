@@ -11,12 +11,15 @@ import VisionImageBlock from "../components/Home/VisionImageBlock";
 import Icon from "../components/UI/Icon";
 import { RiBook2Fill, RiFlag2Fill } from "react-icons/ri";
 import { FaLightbulb } from "react-icons/fa";
+import { useTheme } from "next-themes";
 
 const classNames = (...classes: String[]) => {
   return classes.filter(Boolean).join(" ");
 };
 
 const Home = () => {
+  const { theme } = useTheme();
+  const bgColorClass = theme === "dark" ? "bg-dark-mode" : "bg-gray-100";
   let [categories] = useState({
     "Our Story": [
       {
@@ -52,12 +55,11 @@ const Home = () => {
       },
     ],
   });
-
   return (
     <Layout pageTitle="Home">
-      <Hero />
+      <Hero/>      
       <Carousel />
-      <div className="px-2 xl:px-28 pt-8 mt-20 bg-gray-100">
+      <div className={`px-2 xl:px-28 pt-8 mt-20 ${bgColorClass}`}>
         <div className="lg:w-full px-2 -mt-14 sm:px-0">
           <Tab.Group>
             <Tab.List className="flex p-1 max-w-3xl mx-auto space-x-1 bg-pink-100 rounded-xl">

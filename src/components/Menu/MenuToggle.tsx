@@ -1,18 +1,23 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 
-const Path = (props: any) => (
+const Path = (props: any) => {
+  const { theme } = useTheme();
+
+  return (
   <motion.path
     fill="transparent"
     strokeWidth="3"
-    stroke="hsl(0, 0%, 18%)"
+    stroke={theme === "dark" ? "white" : "hsl(0, 0%, 18%)"}
     strokeLinecap="round"
     {...props}
 
   >
     Hello
     </motion.path>
-);
+  );
+};
 
 interface toggleProps {
   toggle: any;

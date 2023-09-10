@@ -16,6 +16,7 @@ import hc9 from "/public/static/hc9.jpg";
 import hc10 from "/public/static/hc10.jpg";
 
 import styles from "./Carousel.module.css";
+import { useTheme } from "next-themes";
 
 interface CarouselProps {}
 
@@ -26,6 +27,9 @@ const SLIDE_COUNT = 10;
 const slides = Array.from(Array(SLIDE_COUNT).keys());
 
 const Carousel: React.FC<CarouselProps> = () => {
+  const [backgroundColor, setBackgroundColor] = useState("bg-white");
+  const { theme } = useTheme();
+
   const autoplay = useRef(
     Autoplay(
       { delay: 3000, stopOnInteraction: false },
@@ -74,11 +78,16 @@ const Carousel: React.FC<CarouselProps> = () => {
     onScroll();
     embla.on("select", onSelect);
     embla.on("scroll", onScroll);
-  }, [embla, onSelect, onScroll]);
+    if (theme === "light") {
+      setBackgroundColor("!light");
+    } else if (theme === "dark") {
+      setBackgroundColor("!bg-dark-mode");
+    }
+  }, [embla, onSelect, onScroll, theme]);
 
   return (
     <>
-      <div className={styles.embla}>
+      <div className={`${styles.embla} ${backgroundColor}`}>
         <div className={styles.embla__viewport} ref={viewportRef}>
           <div className={styles.embla__container}>
             {slides.map((index) => (

@@ -6,6 +6,7 @@ module.exports = {
       variants: ["hover"]
     }
   ],
+  darkMode: ["class"],
   theme: {
     fontFamily: {
       sans: ["Poppins", "sans-serif"],
@@ -27,6 +28,7 @@ module.exports = {
         "grass-500": "#12443B",
         "grass-600": "#134039",
         milk: "#FCF6F5",
+        'dark-mode': '#333',
       },
     },
   },

@@ -1,8 +1,17 @@
 import Head from "next/head";
 import "../../styles/globals.css";
 import type { AppProps } from "next/app";
+import { ThemeProvider } from "../components/Theme/ThemeProvider";
+import { useTheme } from "next-themes";
+import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const { setTheme } = useTheme();
+
+  useEffect(() => {
+    // Set the initial theme to "light" on the first load and on refresh
+    setTheme("light");
+  }, [setTheme]);
   return (
     <>
       <Head>
@@ -14,7 +23,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }
