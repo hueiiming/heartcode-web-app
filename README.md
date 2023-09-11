@@ -95,21 +95,25 @@ E.g.,
  <br>
  
 ## Run app locally
-<b>Step 1:</b>
-Open VSC and in your terminal, clone the project 
-```git clone https://github.com/hueiiming/heartcode-web-app.git```
+- <b>Step 1:</b>
+  Open VSC and in your terminal, clone the project
+  <br>
+  ```git clone https://github.com/hueiiming/heartcode-web-app.git```
 
-<b>Step 2:</b>
-Build the docker image
-```docker build -t heartcode .```
+- <b>Step 2:</b>
+  Build the docker image
+  <br>
+  ```docker build -t heartcode .```
 
-<b>Step 3:</b>
-Run the app on localhost
-```docker run -p 8080:3000 heartcode```
+- <b>Step 3:</b>
+  Run the app on localhost
+  <br>
+  ```docker run -p 8080:3000 heartcode```
 
-<b>Step 4:</b>
-Enter this into your URL to load the app
-```http://localhost:8080/```
+- <b>Step 4:</b>
+  Enter this into your URL to load the app
+  <br>
+  ```http://localhost:8080/```
 
 <br>
 _If you are unsure, feel free to refer to how it is done for the previous runs._
