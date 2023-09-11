@@ -24,11 +24,13 @@ const Header: React.FC<HeaderProps> = () => {
               </div>
             </Link>
           </div>
-          <div>
-            <ThemeSwitcher />
-          </div>
-          <div>
-            <Menu />
+          <div className="flex items-center">
+            <div className="mr-8">
+              <ThemeSwitcher />
+            </div>
+            <div>
+              <Menu />
+            </div>
           </div>
         </div>
       </header>
