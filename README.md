@@ -94,7 +94,7 @@ E.g.,
  
  <br>
  
-#### Run app locally
+## Run app locally
 <b>Step 1:</b>
 Open VSC and in your terminal, clone the project 
 ```git clone https://github.com/hueiiming/heartcode-web-app.git```
