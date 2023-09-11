@@ -6,6 +6,7 @@ import yearData from "../Data/yearData"
 import { IoMdHome, IoMdPeople, IoMdSchool } from "react-icons/io";
 import { RiArticleFill } from "react-icons/ri"
 import { BsBookmarkHeartFill } from "react-icons/bs";
+import { useTheme } from "next-themes";
 
 const links = [
   { 
@@ -64,6 +65,10 @@ const sideVariants = {
 
 const Menu: React.FC = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
+  const { theme } = useTheme();
+  const menuBgColor = theme === "dark" ? "bg-dark-mode" : "bg-white";
+  const menuColor = theme === "dark" ? "light" : "text-gray-500";
+  const menuPrColor = theme === "dark" ? "light" : "text-gray-500";
 
   return (
     <AnimatePresence>
@@ -80,7 +85,7 @@ const Menu: React.FC = () => {
       {isOpen && (
         <motion.div
           key="menu"
-          className="h-screen fixed top-0 right-0 z-50 shadow-sm rounded-l-md bg-gradient-to-r bg-white"
+          className={`h-screen fixed top-0 right-0 z-50 shadow-sm rounded-l-md bg-gradient-to-r ${menuBgColor}`}
           initial={{ width: 0 }}
           animate={{
             width: 300,
@@ -97,7 +102,7 @@ const Menu: React.FC = () => {
             exit="closed"
             variants={sideVariants}
           >
-            <div className="text-sm pl-5 h-8 font-light tracking-wide text-gray-500">
+            <div className={`text-sm pl-5 h-8 font-light tracking-wide ${menuColor}`}>
               Menu
             </div>
             {links.map(({ id, name, to, icon, color }) => (
@@ -119,7 +124,7 @@ const Menu: React.FC = () => {
                 </Link>
               </motion.div>
             ))}
-            <div className="text-sm pl-5 py-3 font-light tracking-wide text-gray-700">
+            <div className={`text-sm pl-5 py-3 font-light tracking-wide ${menuPrColor}`}>
               Previous Runs
             </div>
             {years.map((year) => (
