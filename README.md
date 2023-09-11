@@ -92,6 +92,26 @@ E.g.,
  ┗ 📜Project
  ```
  
+ <br>
+ 
+#### Run app locally
+<b>Step 1:</b>
+Open VSC and in your terminal, clone the project 
+```git clone https://github.com/hueiiming/heartcode-web-app.git```
+
+<b>Step 2:</b>
+Build the docker image
+```docker build -t heartcode .```
+
+<b>Step 3:</b>
+Run the app on localhost
+```docker run -p 8080:3000 heartcode```
+
+<b>Step 4:</b>
+Enter this into your URL to load the app
+```http://localhost:8080/```
+
+<br>
 _If you are unsure, feel free to refer to how it is done for the previous runs._
 
 yearData refers to the data on the actual run itself - under the /run/[year] page. The pages will be statically generated, so as long as you have a folder of the year, with the updated yearData accordingly, the page for the run will be created automatically. Do note to use squared images so as to not have them look distorted on the website :)
