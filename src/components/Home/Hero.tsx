@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
   const bgColorClass = theme === "dark" ? "bg-dark-mode" : "bg-milk";
 
   return (
-    <div className={`flex flex-col justify-center items-center pt-20 mb-8 ${bgColorClass}`}>
+    <div className={`flex flex-col justify-center items-center pt-20 mb-8 ${bgColorClass} duration-150`}>
       <div className="w-full lg:w-3/5 mb-8">
         <Image
           src="/static/hero.png"

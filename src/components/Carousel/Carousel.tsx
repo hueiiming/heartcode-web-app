@@ -87,7 +87,7 @@ const Carousel: React.FC<CarouselProps> = () => {
 
   return (
     <>
-      <div className={`${styles.embla} ${backgroundColor}`}>
+      <div className={`${styles.embla} ${backgroundColor} duration-150`}>
         <div className={styles.embla__viewport} ref={viewportRef}>
           <div className={styles.embla__container}>
             {slides.map((index) => (

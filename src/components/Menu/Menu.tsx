@@ -85,7 +85,7 @@ const Menu: React.FC = () => {
       {isOpen && (
         <motion.div
           key="menu"
-          className={`h-screen fixed top-0 right-0 z-50 shadow-sm rounded-l-md bg-gradient-to-r ${menuBgColor}`}
+          className={`h-screen fixed top-0 right-0 z-50 shadow-sm rounded-l-md bg-gradient-to-r ${menuBgColor} duration-100`}
           initial={{ width: 0 }}
           animate={{
             width: 300,
